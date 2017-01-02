@@ -1,0 +1,48 @@
+<div class="container">
+	<h3>New Pilot Car Requests</h3>
+	<div class="table-responsive">
+		<table class= 'table table-condensed' id= 'loads'>
+		  <thead> 	 	<!-- table header  -->
+		    <tr>
+		      <th>Pick Up</th>
+		      <th>State</th>
+		      <th>Destination</th>
+		      <th>State</th>
+		      <th>Est. Rate</th>
+			  <th>Rate Type</th>
+		      <th>Distance</th>
+		      <th>Load (Date/Time)</th>
+		      <th>Drop (Date/Time)</th>
+		      <th>Pilotcars</th>
+		      <th>Polecar</th>
+		    </tr>
+		  </thead> 		 <!-- Second row header end  -->
+		  <tbody>		  	
+		    	<tr>
+			    	<% @loads.each do |load| %>
+					<% if load.current_status == "ACTIVE" and load.pickup_datetime > Date.today %> 
+		  					        <td><%= load.origin_city %></td>
+		  					        <td><%= load.origin_state %></td>
+		  					        <td><%= load.destination_city %></td>
+		  					        <td><%= load.destination_state %></td>
+		  					        <td><%= number_to_currency(load.fee) %> </td>
+		  							<td><%= load.fee_type %> </td>
+		  					        <td><%= load.distance %></td>
+		  					        <td><%= I18n.l load.pickup_datetime, format: :myformat %></td>
+		  							<td><%= I18n.l load.delivery_datetime, format: :myformat %></td>
+		  					        <td align="center"><%= load.pilotcar_count %></td>
+		  					        <td align="center"><% if load.polecar_needed %>
+		  								Yes 
+		  								<% else %>
+		  								No 
+		  								<% end %>
+		  							</td>
+						
+		      </tr>
+			  		<% end %>
+			  		<% end %>
+				</tbody>
+			</table>
+		</div>
+			<br>				
+</div>

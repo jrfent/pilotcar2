@@ -1,0 +1,15 @@
+<div class="form">
+<%= form_for([@listing, @listing.notifications.build]) do |f| %>
+	<h3>Contact this Pilot Car company</h3>
+		<div class="form-group">
+		    <%= f.label "Message: (this will automatically include your contact info)" %><br>
+		    <%= f.text_area :content, { :rows => 7 , :style => 'width: 100%'} %>
+		</div>
+   
+	  <div class="form-group">
+	    <%= f.submit "Send Message", class: "btn btn-primary" %>
+	  </div>
+	  <br>  <br>
+</div>
+<% end %>
+</div>

@@ -1,0 +1,16 @@
+	<div class="container">
+	<div class="jumbotron">
+		<h4>Welcome to Pilot Car Finder</h4>
+		<p><%= link_to "Sign up today FREE", signup_path, class: "btn btn-primary" %></p>
+	</div>
+     <% if trucker_signed_in? %> 
+	 <%= render 'tloadlist' %> <!-- render truckers load list -->
+     <% else %>
+     <% if pilot_signed_in? %>
+	 <%= render 'ploadlist' %>	  <!-- render pilotcar load list -->
+     <% else %>
+	<%= render 'gploadlist' %> <!-- render general public load list -->
+ <% end %>  
+ <% end %>  
+</div>
+ <br>

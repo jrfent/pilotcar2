@@ -1,0 +1,116 @@
+<%= form_for(@load) do |f| %>
+  <% if @load.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+		<h4><%= pluralize(@load.errors.count, "error") %> prohibited this load from being saved:</h4>
+      <ul>
+      <% @load.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <H3> <label for="Starting Point Info">Starting Point Info</label></H3><br>
+  <div class="form-group">
+    <label for="City">City</label><br>
+    <%= f.text_field :origin_city, class: "form-control", placeholder: 'Starting Point City', required: true %>
+  </div>
+  <div class="form-group">
+    <label for="State">State</label><br>
+	<%= f.select :origin_state, options_for_select(us_states, :selected => @load.origin_state), required: true %> 
+	<!-- <%= f.select :origin_state, options_for_select(us_states), required: true %> -->
+  </div>
+  <div class="form-group">
+    <label for="ZipCode">ZipCode</label>
+	<table> <tr>
+		<td><%= f.text_field :origin_zipcode, class: "form-control", placeholder: 'Starting Point Zipcode', required: true %></td>
+		<td> &nbsp &nbsp </td> 
+		<td><div class="actions">
+			<%= link_to 'http://www.geonames.org/postalcode-search.html?q=&country=us', :target => '_blank' do %>
+			<span class="glyphicon glyphicon-eye-open"></span> (LookUp Zip)
+			<% end %>
+			</div>
+		</td>
+	</tr> </table>		
+  </div>
+  <h3><label for="Destination">Destination</label></h3><br>
+  <div class="form-group">
+    <label for="City">City</label><br>
+    <%= f.text_field :destination_city, class: "form-control", placeholder: 'Destination City', required: true %>
+  </div>
+  <div class="form-group">
+    <label for="State">State</label><br>
+    <%= f.select :destination_state, options_for_select(us_states, :selected => @load.destination_state), required: true %>
+  </div>
+  <div class="form-group">
+    <label for="ZipCode">ZipCode</label>
+	<table> <tr>
+		<td><%= f.text_field :destination_zipcode, class: "form-control", placeholder: 'End Point Zipcode', required: true %></td>
+		<td> &nbsp &nbsp </td> 
+		<td><div class="actions">
+			<%= link_to 'http://www.geonames.org/postalcode-search.html?q=&country=us', :target => '_blank' do %>
+			<span class="glyphicon glyphicon-eye-open"></span> (LookUp Zip)
+			<% end %>
+			</div>
+		</td>
+	</tr> </table>		
+  </div>
+  <h3><label for="Load Details">Load Details</label></h3><br>  
+	<div class="form-group">
+    <%= f.label "Anticipated Rate" %> 
+	<%= number_to_currency(f.number_field :fee, class: "form-control", :step =>0.01, min: 0, placeholder: 'USD $0.00', required: true) %>
+	</div>
+    <div class="form-group">
+    <%= f.radio_button :fee_type, "per mile", label: "per mile" %> per mile &nbsp
+    <%= f.radio_button :fee_type, "for trip", label: "for trip" %> for trip
+  </div>
+  <div class="form-group">
+    <label for="Distance">Distance</label>
+	<table> <tr>
+		<td><%= f.text_field :distance, class: "form-control", min: 0, placeholder: 'Approximate US miles', required: true %></td>
+		<td> &nbsp &nbsp </td> 
+		<td><div class="actions">
+			<%= link_to 'http://www.zip-codes.com/distance_calculator.asp', :target => '_blank' do %>
+			<span class="glyphicon glyphicon-eye-open"></span> (LookUp Distance)
+			<% end %>
+			</div>
+		</td>
+	</tr> </table>		
+  </div>
+  <div class="form-group">
+    <%= f.label "Load (Date / Time)" %><br>
+    <%= f.datetime_select :pickup_datetime, :class => 'datepicker', :minute_step => 15 %>
+  </div>
+  <div class="form-group">
+    <%= f.label "Drop (Date / Time)" %><br>
+    <%= f.datetime_select :delivery_datetime, class: "form-control", :minute_step => 15 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :special_notes %><br>
+    <%= f.text_area :special_notes, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+	<%= f.label "Specify number of pilot cars required: " %> &nbsp
+    <%= f.radio_button :pilotcar_count, 1, label: "1", checked: true %> 1 &nbsp
+    <%= f.radio_button :pilotcar_count, 2, label: "2" %> 2 &nbsp
+    <%= f.radio_button :pilotcar_count, 3, label: "3" %> 3 &nbsp
+	<%= f.radio_button :pilotcar_count, 4, label: "4" %> 4 
+  </div> 
+ 
+  <div class="form-group">
+	<%= f.check_box :polecar_needed %> &nbsp
+	<%= label_tag(:polecar_needed, "Pole Car Required") %>
+  </div>
+ <% if @load.id? %>
+  <div class="form-group">
+	<%= f.label "Current Status" %> &nbsp
+	<%= f.select(:current_status, options_for_select([['ACTIVE', 'ACTIVE'], 
+	['ON HOLD', 'ON HOLD'], ['COVERED', 'COVERED']]), {}, {class: "form-control"}) %>
+  </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
+</form>

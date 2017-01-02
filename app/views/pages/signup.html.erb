@@ -1,0 +1,18 @@
+<% title 'Pilot Car Finder Sign Up' %>
+<% description 'Pilot Car Directory Sign up page. You can sign up as a pilot car operator or a trucker.' %>
+<% keywords 'pilotcar, pilot car, directory' %>
+<br>
+<div class="container">
+	<div class="jumbotron">
+		<div class="container-fluid", align="center">
+			<h2>Sign Up Here</h2>
+			<p>( Yes, It's FREE! )
+			<p>Are you a Pilot Car Operator or are you looking to hire one?</p>
+			<br>
+			<p><%= link_to "I'm a Pilot Car Operator",
+			 new_pilot_registration_path, class: "btn btn-primary" %>
+ 			 <%= link_to "I'm looking for a Pilot Car Operator",
+ 			 new_trucker_registration_path, class: "btn btn-primary" %></p>
+		</div>
+	</div>
+</div>

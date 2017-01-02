@@ -1,0 +1,12 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$font-size-h2:					  18px;
+.alert {
+	position:absolute;
+    left: 55px;
+    top: 120px;
+    z-index:1;
+    width: 200px;
+}
+

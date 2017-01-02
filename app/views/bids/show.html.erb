@@ -1,0 +1,23 @@
+<div class= "container">
+	<div class='jumbotron'>
+		<p id="notice"><%= notice %></p>
+
+		<p>
+		  <strong>Fee:</strong>
+		  <%= @bid.fee %>
+		</p>
+
+		<p>
+		  <strong>Pilot:</strong>
+		  <%= @bid.pilot_id %>
+		</p>
+
+		<p>
+		  <strong>Load:</strong>
+		  <%= @bid.load_id %>
+		</p>
+
+		<%= link_to 'Edit', edit_bid_path(@bid) %> |
+		<%= link_to 'Back', bids_path %>
+	</div>
+</div>

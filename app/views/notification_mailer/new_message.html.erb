@@ -1,0 +1,20 @@
+<h2>This is a contact notification from someone seeking Pilot Car or Over Size load support.</h2>
+<p>
+  This is a contact notification from someone seeking Pilot Car or Over Size load support from your listing: <%= link_to @listing.title, listing_url(@listing) %><br>
+
+  Here is there contact information:<br>
+</p>
+
+<p>
+<strong>Name:</strong>&nbsp; <%= @trucker.contact_name %><br>
+<strong>Phone:</strong>&nbsp;<%= number_to_phone(@trucker.contact_phone) %><br>
+<strong>Email Address:</strong>&nbsp;<%= @trucker.email %><br><br>
+
+<strong>Message:</strong><br>
+<%= @notification.content %><br><br>
+
+<hr>
+<p>Please contact them as soon as possible.  They are looking to get you confirmed for this as soon as possible.<br><br>
+
+Best Regards,<br>
+PilotCar Finder Team<br></p>

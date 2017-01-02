@@ -1,0 +1,56 @@
+<div class="container">
+	<div class="jumbotron">
+		 <h3>Pilot Car Request Summary</h3>
+		<p>
+		  <h3>Origin</h3>
+		  <%= @load.origin_city %> , &nbsp  <%= @load.origin_state %> &nbsp <%= @load.origin_zipcode %> &nbsp <%= @load.origin_country %><br>
+		  Load (Date / Time): <%= I18n.l @load.pickup_datetime, format: :myformat %><br><br>
+		  <strong>Pilotcar count:</strong>
+		  <%= @load.pilotcar_count %><br>
+		  <strong>Polecar Required:</strong>
+		  <% if @load.polecar_needed %>
+		  Yes
+		  <% else %>
+		  No
+		  <% end %>
+		</p>  
+  
+		<p>
+		  <h3>Destination</h3>
+		   <%= @load.destination_city %> , &nbsp  <%= @load.destination_state %> &nbsp <%= @load.destination_zipcode %> &nbsp <%= @load.destination_country %><br>
+		   Drop (Date / Time):<%= I18n.l @load.delivery_datetime, format: :myformat %>
+		</p>
+
+		<p>
+		  <h3>Additional Details:</h3>
+
+		  <strong>Expected Fee:</strong>
+		  <%= number_to_currency(@load.fee) %> &nbsp <%= @load.fee_type %><br>
+		  <strong>Approximate Distance:</strong>
+		  <%= @load.distance %> &nbsp miles<br>
+		  <strong>Additional Notes:</strong><br>
+		  <%= @load.special_notes %><br>
+		  <strong>Current status:</strong>
+		  <%= @load.current_status %><br>
+		</p>
+				<% if pilot_signed_in? %>
+				<%= link_to 'New Bid', new_load_bid_path(@load), class:"btn btn-primary" %>
+				<% end %>
+		<table>
+			<tr>
+				<% if @load.trucker == current_trucker and @load.current_status == "ACTIVE" and @load.pickup_datetime > Date.today %>
+				<td><%= link_to 'Edit', edit_load_path(@load), class: "btn btn-primary" %> &nbsp </td>
+				<td><%= link_to 'Change Status', edit_load_path(@load), class: "btn btn-primary" %> &nbsp </td>
+				<% end %>
+				<td>
+				<% if @load.trucker == current_trucker %>
+				<%= link_to 'Duplicate Run', action: 'clone', id: @load.id, class:"btn btn-default" %>  &nbsp 
+				</td>
+			</tr>
+		</table><br>
+				<td><%= link_to 'Back to List', loads_path, class:"btn btn-default" %> &nbsp </td>
+				<% end %>
+
+		<br><br>
+	</div>
+</div>

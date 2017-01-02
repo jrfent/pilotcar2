@@ -1,0 +1,166 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import 'bootstrap';
+
+$body-bg:                         #20B1D6;
+$font-family-sans-serif:          'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-height:                   30px;
+$navbar-default-bg:               92A39C;
+$navbar-default-brand-color:      #c0392b;
+$brand-primary:                   #c0392b;
+$jumbotron-bg:                    blue;
+
+#jumbo {
+  padding: 0px;
+}
+
+.border-form-div {
+  max-width: 320px;
+  padding: 20px 20px 20px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.border-formedit-div {
+  max-width: 500px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+.center {
+     text-align: center;
+}
+
+.navbar-brand {
+     font-weight: bold;
+}
+
+.navbar {
+    margin-bottom:0;
+	background: white;
+  }
+
+.container {
+    padding-left: 1px;
+  	padding-right: 1px;
+    }  
+	
+big{
+	font-size: 16px;
+	font-weight: bold;
+	}
+	
+h4{
+  margin: 0;     
+  color: #666;
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+.indent {
+  margin-left: 15px;
+}
+  
+  @font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+    font-family: 'FontAwesome';
+    src: url('/assets/fontawesome-webfont.eot?v=4.0.3');
+    src: url('/assets/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), 
+    url('/assets/fontawesome-webfont.woff?v=4.0.3') format('woff'),
+    url('/assets/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), 
+    url('/assets/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  #editlink a:link {color: #fff}
+  
+  #loads {
+    margin: 0 auto;
+  }
+  
+  .jumbotron {
+	  margin-top: 10px;
+  }
+  
+  .jumbotron-img {
+	  background-image: url("http://s3.amazonaws.com/pilotcar/pins/images/000/000/008/original/Oversize_Load_on_the_Road2.jpg?1451792871");
+  	  color: white;
+	  background-attachment: fixed;
+	  min-height: 350px;
+	  margin-top: 0px;
+	  margin-bottom: 0px;
+  }
+  .jumbotron-home {
+	  color: white;
+	  background: #1B98E0;
+	  min-height: 300px;
+	  margin-top: 0px;
+	  margin-bottom: 0px;
+  }
+
+  .navbar-bottom {
+	  color: #DCDCDD;
+	  a:link { color: #DCDCDD; }
+      background: none repeat scroll 0 0 #46494C;
+	  border: 0px solid #5F6E72;
+	  font: white;
+  }
+  
+  .btn-warning {
+      color: black;
+	  margin-bottom: 5px;
+  }
+  
+  .btn-primary {
+	  margin-bottom: 5px;
+  }
+  
+  .well-sm {
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+  }
+  
+  .btn-home {
+  	  width: 250px;
+  }
+  
+  .fa-home {
+  	color: #FCBA03;
+	padding: 5px;
+  }
+  
+  iframe {
+	  padding: 10px;
+  }
+  

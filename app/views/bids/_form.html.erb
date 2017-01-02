@@ -1,0 +1,15 @@
+<div class='container'>
+	<%= simple_form_for(@bid) do |f| %>
+	  <%= f.error_notification %>
+
+	  <div class="form-inputs">
+	    <%= f.input :fee %>
+	    <%= f.input :pilot_id %>
+	    <%= f.input :load_id %>
+	  </div>
+	  <br>
+	  <div class="form-actions">
+	    <%= f.button :submit %>
+	  </div>
+	<% end %>
+</div>

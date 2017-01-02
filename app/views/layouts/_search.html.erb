@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="well well-sm">
+		<div class="row">
+			<%= form_tag search_listings_path, method: :get do |f| %>
+			<div class="form-group">	
+				<div class="col-xs-12 col-md-3">
+					<div class="form-group">
+						<%= text_field_tag :search, nil, class: "form-control", placeholder: 'search (any word)' %>
+					</div>
+				</div>	
+				<div class="col-xs-12 col-md-3">
+					<div class="form-group">
+						<%= text_field_tag :location, nil, class: "form-control", placeholder: 'near (city or zipcode)' %>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-1">
+					<div class="form-group">
+						<%= submit_tag 'SEARCH', class: "btn btn-primary btn-lge" %>
+					</div>
+				</div>
+				<div class="col-md-5">
+						<%= link_to "Search by State or Metro Area", states_path, class: "btn btn-default btn-lge" %>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div> 
+</div>

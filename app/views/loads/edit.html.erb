@@ -1,0 +1,16 @@
+<% if @load.trucker == current_trucker and @load.current_status == "ACTIVE" and @load.pickup_datetime > (Date.today - 1.day) %>
+<div class= "container">
+<div class='jumbotron'>
+<h3>Edit Pilot Car Request</h3>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @load %> |
+<%= link_to 'Back', loads_path %>
+</div>
+<% else %>
+<div class="jumbotron">
+<p class="bg-danger">You can not edit this record.</p>
+</div>
+</div>
+<% end %>

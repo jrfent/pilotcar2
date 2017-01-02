@@ -1,0 +1,18 @@
+
+<%= form_for([@listing, @listing.pins.build], html: { multipart: true }) do |f| %>
+<form class="form-horizontal">
+	 <div class="form-group">
+	   <%= f.label :image %>
+	   <%= f.file_field :image, class: "form-control", required: true %>
+	 </div>
+	  <div class="form-group">
+	    <%= f.label :description %><br>
+	    <%= f.text_area :description, { :rows => 1 , :style => 'width: 100%', maxlength: "140", required: true} %>
+	  </div>
+	  <div class="form-group">
+	     <%= f.submit "Add photo", class: "btn btn-primary" %>
+	  </div>
+</form>
+<% end %>
+
+	  

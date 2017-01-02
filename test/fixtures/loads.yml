@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  origin_country: MyString
+  origin_city: MyString
+  origin_state: MyString
+  origin_zipcode: MyString
+  destination_country: MyString
+  destination_city: MyString
+  destination_state: MyString
+  destination_zipcode: MyString
+  fee: 1
+  fee_type: MyString
+  distance: 1
+  pickup_datetime: 2014-09-06 06:55:49
+  delivery_datetime: 2014-09-06 06:55:49
+  special_notes: MyText
+  pilotcar_count: 1
+  polecar_needed: false
+  current_status: MyString
+
+two:
+  origin_country: MyString
+  origin_city: MyString
+  origin_state: MyString
+  origin_zipcode: MyString
+  destination_country: MyString
+  destination_city: MyString
+  destination_state: MyString
+  destination_zipcode: MyString
+  fee: 1
+  fee_type: MyString
+  distance: 1
+  pickup_datetime: 2014-09-06 06:55:49
+  delivery_datetime: 2014-09-06 06:55:49
+  special_notes: MyText
+  pilotcar_count: 1
+  polecar_needed: false
+  current_status: MyString

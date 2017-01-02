@@ -1,0 +1,12 @@
+<%= render 'layouts/search' %>
+<div class="container">
+<div class="jumbotron">
+  <tbody>
+    <% @subcategories.each do |subcategory| %>
+      <tr>
+        <td><%= subcategory.name %></td>
+	  </tr>
+	  <% end %>
+	</tbody> 
+</div>
+</div>

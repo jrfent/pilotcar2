@@ -1,0 +1,8 @@
+def send_simple_message
+  RestClient.post "https://api:key-4c6884146a9bb19a4e33e5d177335bfd"\
+  "@api.mailgun.net/v3/sandbox0c7fafd9699c4d5e86b1b3d4d02d61ab.mailgun.org/messages",
+  :from => "Mailgun Sandbox <postmaster@sandbox0c7fafd9699c4d5e86b1b3d4d02d61ab.mailgun.org>",
+  :to => "JR Fent <jrfent@gmail.com>",
+  :subject => "Hello JR Fent",
+  :text => "Congratulations JR Fent, you just sent an email with Mailgun!  You are truly awesome!  You can see a record of this email in your logs: https://mailgun.com/cp/log .  You can send up to 300 emails/day from this sandbox server.  Next, you should add your own domain so you can send 10,000 emails/month for free."
+end

@@ -1,0 +1,26 @@
+<%= render 'layouts/search' %>
+<div class="container">
+	<div class="well well-sm">
+		  <div class="row">
+				  <div class="col-xs-12 col-sm-7 col-md-7">
+					  <% if @listings.present? %>	
+					  <%  @listings.each do |listing| %>
+						<h4><%= link_to listing.title, listing_path(listing.slug) %></h4>
+						<b><%= listing.city %>, <%= listing.state %> &nbsp; &nbsp;  
+					    <%= link_to number_to_phone(listing.contactphone, area_code: true), 			  				phone_number_link(listing.contactphone) %> </b>
+						<p><%= raw(listing.shortdescription) %><br>
+					<% end %>
+					<% else %>
+					<p>No listings found! </p>
+					<% end %>
+				   </div>
+			   <div class="col-xs-6 col-sm-5 col-md-5">
+				   <p align="right"> </p>
+			   </div>
+		   </div>
+		<div class="container", align="center">
+			<%= will_paginate @listings %>
+		</div>
+	</div>
+</div>
+	

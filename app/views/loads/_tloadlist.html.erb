@@ -1,0 +1,149 @@
+<% if trucker_signed_in? %>
+<div class="container">
+	<h3>Active Pilot Car Requests</h3>
+<div class="table-responsive">
+		<table class= 'table table-condensed' id= 'pilot'>
+		  <thead> 	 	<!-- table header  -->
+		    <tr>
+		      <th>Pick Up</th>
+		      <th>State</th>
+		      <th>Destination</th>
+		      <th>State</th>
+		      <th>Est. Rate</th>
+			  <th>Rate Type</th>
+		      <th>Distance</th>
+		      <th>Load (Date/Time)</th>
+		      <th>Drop (Date/Time)</th>
+		      <th>Pilotcars</th>
+		      <th>Polecar</th>
+		    </tr>
+		  </thead> 		 <!-- Second row header end  -->
+		  <tbody>		  	
+		    	<tr>
+			    	<% @loads.each do |load| %>
+					<% if load.trucker == current_trucker and load.current_status == "ACTIVE" and load.pickup_datetime > Date.today %> 
+		  					        <td><%= link_to load.origin_city, load %></td>
+		  					        <td><%= link_to load.origin_state, load %></td>
+		  					        <td><%= link_to load.destination_city, load %></td>
+		  					        <td><%= link_to load.destination_state, load %></td>
+		  					        <td><%= link_to number_to_currency(load.fee), load %> </td>
+		  							<td><%= link_to load.fee_type, load %> </td>
+		  					        <td><%= link_to load.distance, load %></td>
+		  					        <td><%= I18n.l load.pickup_datetime, format: :myformat %></td>
+		  							<td><%= I18n.l load.delivery_datetime, format: :myformat %></td>
+		  					        <td align="center"><%= load.pilotcar_count %></td>
+		  					        <td><% if load.polecar_needed %>
+		  								Yes 
+		  								<% else %>
+		  								No 
+		  								<% end %>
+		  							</td>
+		  			      </tr>
+					<% end %> <% end %> <% end %>
+				</tbody>
+			</table>
+					<%= link_to 'Create a New Pilot Car Request', new_load_path, 
+					class: "btn btn-primary" %>
+			<br>
+			<br>
+			</div>
+</div>
+<div class="container">
+	<h3>Covered Pilot Car Requests</h3>
+<div class="table-responsive">
+		<table class= 'table table-condensed' id= 'covered'>
+		  <thead> 	 	<!-- table header  -->
+		    <tr>
+		      <th>Pick Up</th>
+		      <th>State</th>
+		      <th>Destination</th>
+		      <th>State</th>
+		      <th>Est. Rate</th>
+			  <th>Rate Type</th>
+		      <th>Distance</th>
+		      <th>Load (Date/Time)</th>
+		      <th>Drop (Date/Time)</th>
+		      <th>Pilotcars</th>
+		      <th>Polecar</th>
+		    </tr>
+		  </thead> 		 <!-- Second row header end  -->
+		  <tbody>		  	
+		    	<tr>
+			    	<% @loads.each do |load| %>
+					<% if load.trucker == current_trucker and load.current_status == "COVERED" and load.pickup_datetime > Date.today %> 
+		  					        <td><%= link_to load.origin_city, load %></td>
+		  					        <td><%= link_to load.origin_state, load %></td>
+		  					        <td><%= link_to load.destination_city, load %></td>
+		  					        <td><%= link_to load.destination_state, load %></td>
+		  					        <td><%= link_to number_to_currency(load.fee), load %> </td>
+		  							<td><%= link_to load.fee_type, load %> </td>
+		  					        <td><%= link_to load.distance, load %></td>
+		  					        <td><%= I18n.l load.pickup_datetime, format: :myformat %></td>
+		  							<td><%= I18n.l load.delivery_datetime, format: :myformat %></td>
+		  					        <td align="center"><%= load.pilotcar_count %></td>
+		  					        <td><% if load.polecar_needed %>
+		  								Yes 
+		  								<% else %>
+		  								No 
+		  								<% end %>
+		  							</td>
+		  			      </tr>
+					<% end %> <% end %>
+				</tbody>
+			</table>
+			<br>
+			<br>
+			</div>
+</div>
+<div class="container">
+	<h3>Past Pilot Car Requests</h3>
+<div class="table-responsive">
+		<table class= 'table table-condensed' id= 'archived'>
+		  <thead> 	 	<!-- table header  -->
+		    <tr>
+		      <th>Pick Up</th>
+		      <th>State</th>
+		      <th>Destination</th>
+		      <th>State</th>
+		      <th>Est. Rate</th>
+			  <th>Rate Type</th>
+		      <th>Distance</th>
+		      <th>Load (Date/Time)</th>
+		      <th>Drop (Date/Time)</th>
+		      <th>Pilotcars</th>
+		      <th>Polecar</th>
+			  <th>Status</th>
+		    </tr>
+		  </thead> 		 <!-- Second row header end  -->
+		  <tbody>		  	
+		    	<tr>
+			    	<% @loads.each do |load| %>
+					<% if load.trucker == current_trucker and (load.pickup_datetime <= Date.today or load.current_status == "ON HOLD")  %> 
+		  					        <td><%= link_to load.origin_city, load %></td>
+		  					        <td><%= link_to load.origin_state, load %></td>
+		  					        <td><%= link_to load.destination_city, load %></td>
+		  					        <td><%= link_to load.destination_state, load %></td>
+		  					        <td><%= link_to number_to_currency(load.fee), load %> </td>
+		  							<td><%= link_to load.fee_type, load %> </td>
+		  					        <td><%= link_to load.distance, load %></td>
+		  					        <td><%= I18n.l load.pickup_datetime, format: :myformat %></td>
+		  							<td><%= I18n.l load.delivery_datetime, format: :myformat %></td>
+		  					        <td align="center"><%= load.pilotcar_count %></td>
+		  					        <td align="center"><% if load.polecar_needed %>
+		  								Yes 
+		  								<% else %>
+		  								No 
+		  								<% end %>
+		  							</td>
+									<% if load.pickup_datetime <= Date.today %>
+									<td>EXPIRED</td>
+									<% else %>
+									<td><%= load.current_status %></td>
+									<% end %>
+		  			      </tr>
+					<% end %> 
+					<% end %>
+				</tbody>
+			</table>	
+			</div>
+</div>  
