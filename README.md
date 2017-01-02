@@ -2,7 +2,7 @@
 
 <strong>Things to do:</strong>
 
-create admin panel
+create admin panel please - it's overdue!
 
 X finish frontpage
 
