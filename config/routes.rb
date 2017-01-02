@@ -41,6 +41,7 @@ Pilotcar::Application.routes.draw do
   get "/loads/:id/clone"	=> "loads#clone"
   get "clone" => "loads#clone"
   match '/mylistings', to: 'listings#mylistings', via: :get
+  match '/adminlistings', to: 'listings#adminlistings', via: :get
   match '/subcategories/find_by_category', to: 'subcategories#find_by_category', via: :post
   get "/states" => "categories#index"
   

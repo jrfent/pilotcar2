@@ -1,0 +1,26 @@
+<meta name="robots" content="noindex" />
+<%= render 'layouts/search' %>
+<div class="container">
+	<div class="well well-sm">
+		<h3>My Listings</h3>
+		<p><strong>IMPORTANT:</strong><br>
+		Do not create more than one listing within a State.</br>
+		Do not create listings within 100 miles of each other (even in seperate States).<br></p>
+		<%= link_to 'Create PilotCar Listing', new_listing_path, class: "btn btn-primary btn-xs"%>
+		<hr>
+			  <% if @listings.present? %>	
+		  <%  @listings.each do |listing| %>
+		  <div class="row">
+			  <div class="col-md-8">
+					<%= link_to listing.title, listing_path(listing.slug) %> - <%= listing.city %>, <%= listing.state %>
+					, <%= listing.website %>
+					 &nbsp; <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-warning btn-xs" %> 
+					<br><br>
+			   </div>
+		   </div>
+			<% end %>
+			<% else %>
+			<p>No listings found! </p>
+			<% end %>
+	</div>
+	</div>

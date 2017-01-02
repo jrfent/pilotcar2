@@ -55,6 +55,10 @@ class ListingsController < ApplicationController
     @listings = Listing.where(pilot: current_pilot)
   end
   
+  def adminlistings
+    @listings = Listing.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
+  end
+  
   private
   
   def listing_params
