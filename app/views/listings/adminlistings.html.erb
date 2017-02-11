@@ -15,6 +15,7 @@
 					<%= link_to listing.title, listing_path(listing.slug) %> - <%= listing.city %>, <%= listing.state %>
 					, <%= listing.website %>
 					 &nbsp; <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-warning btn-xs" %> 
+					 &nbsp; <%= link_to 'Delete', (listing), method: :delete, class: "btn btn-danger btn-xs", data: { confirm: 'Are you sure you want to delete this listing?' } %>  (Be careful.)<br>
 					<br><br>
 			   </div>
 		   </div>
