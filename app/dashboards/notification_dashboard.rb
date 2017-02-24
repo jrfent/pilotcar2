@@ -30,7 +30,14 @@ class NotificationDashboard < Administrate::BaseDashboard
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
+  SHOW_PAGE_ATTRIBUTES = [
+    :listing,
+    :trucker,
+    :id,
+    :content,
+    :created_at,
+    :updated_at,
+  ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed

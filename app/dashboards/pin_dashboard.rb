@@ -34,7 +34,18 @@ class PinDashboard < Administrate::BaseDashboard
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
+  SHOW_PAGE_ATTRIBUTES = [
+    :listing,
+    :pilot,
+    :id,
+    :description,
+    :image_file_name,
+    :image_content_type,
+    :image_file_size,
+    :image_updated_at,
+    :created_at,
+    :updated_at,
+  ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed

@@ -52,7 +52,36 @@ class ListingDashboard < Administrate::BaseDashboard
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
+  SHOW_PAGE_ATTRIBUTES = [
+    :category,
+    :subcategory,
+    :pilot,
+    :notifications,
+    :pins,
+    :id,
+    :title,
+    :description,
+    :city,
+    :state,
+    :zipcode,
+    :contactphone,
+    :contactemail,
+    :created_at,
+    :updated_at,
+    :shortdescription,
+    :latitude,
+    :longitude,
+    :slug,
+    :cellphone,
+    :fax,
+    :website,
+    :blog,
+    :facebook,
+    :twitter,
+    :instagram,
+    :pinterest,
+    :google,
+  ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed

@@ -47,7 +47,31 @@ class LoadDashboard < Administrate::BaseDashboard
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
+  SHOW_PAGE_ATTRIBUTES = [
+    :trucker,
+    :bids,
+    :pilots,
+    :id,
+    :origin_country,
+    :origin_city,
+    :origin_state,
+    :origin_zipcode,
+    :destination_country,
+    :destination_city,
+    :destination_state,
+    :destination_zipcode,
+    :fee,
+    :fee_type,
+    :distance,
+    :pickup_datetime,
+    :delivery_datetime,
+    :special_notes,
+    :pilotcar_count,
+    :polecar_needed,
+    :created_at,
+    :updated_at,
+    :current_status,
+  ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
