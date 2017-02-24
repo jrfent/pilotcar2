@@ -1,11 +1,11 @@
 Pilotcar::Application.routes.draw do
-  namespace :admin do
-    DashboardManifest::DASHBOARDS.each do |dashboard_resource|
-      resources dashboard_resource
-    end
+#  namespace :admin do
+#    DashboardManifest::DASHBOARDS.each do |dashboard_resource|
+#      resources dashboard_resource
+#   end
 
-    root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
-  end
+#    root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
+#  end
 
   resources :bids
   resources :pins
@@ -54,4 +54,5 @@ Pilotcar::Application.routes.draw do
   get "/states" => "categories#index"
   
   get 'sitemap.xml', :to => 'sitemap#index', :defaults => { :format => 'xml' }
+  
 end
