@@ -47,8 +47,14 @@ class PilotDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :bids,
-    :loads,
+    :email,
+    :id,
+    :contact_name,
+    :contact_phone,
+    :company,
+    :city,
+    :state,
+    :zipcode,
     :listings,
     :pins,
   ]
