@@ -18,4 +18,3 @@
 //= require dataTables/jquery.dataTables.js
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap.js
 //= require dataTables/extras/dataTables.responsive.js
-//= require_tree .

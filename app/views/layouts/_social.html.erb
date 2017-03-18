@@ -2,37 +2,37 @@
 <tr>
 <% if @listing.blog.present? %>
 <td>
-      	<div class="button"> <%= link_to @listing.blog, target: '_blank' do %> <i class="fa fa-wordpress fa-2x"></i> &nbsp; <% end %></div>
+      	<div class="button"> <%= link_to @listing.blog, target: '_blank', :rel => 'nofollow' do %> <i class="fa fa-wordpress fa-2x"></i> &nbsp; <% end %></div>
 </td>
 <% end %>
 
 <% if @listing.facebook.present? %> 
 <td>
-		<div class="button"> <%= link_to @listing.facebook, target: '_blank' do %> <i class="fa fa-facebook-square fa-2x"></i>  &nbsp; <% end %></div>
+		<div class="button"> <%= link_to @listing.facebook, target: '_blank', :rel => 'nofollow' do %> <i class="fa fa-facebook-square fa-2x"></i>  &nbsp; <% end %></div>
 </td>
 <% end %>	
 
 <% if @listing.twitter.present? %> 
 <td>
-		<div class="button"> <%= link_to @listing.twitter, target: '_blank' do %> <i class="fa fa-twitter-square fa-2x"></i> &nbsp;  <% end %></div>
+		<div class="button"> <%= link_to @listing.twitter, target: '_blank', :rel => 'nofollow' do %> <i class="fa fa-twitter-square fa-2x"></i> &nbsp;  <% end %></div>
 </td>
 <% end %>
 
 <% if @listing.instagram.present? %> 
 <td>
-		<div class="button"> <%= link_to @listing.instagram, target: '_blank' do %> <i class="fa fa-instagram fa-2x"></i> &nbsp;  <% end %></div>
+		<div class="button"> <%= link_to @listing.instagram, target: '_blank', :rel => 'nofollow' do %> <i class="fa fa-instagram fa-2x"></i> &nbsp;  <% end %></div>
 </td>
 <% end %>
 
 <% if @listing.pinterest.present? %> 
 <td>
-		<div class="button"> <%= link_to @listing.pinterest, target: '_blank' do %> <i class="fa fa-pinterest-square fa-2x"></i> &nbsp;  <% end %></div>
+		<div class="button"> <%= link_to @listing.pinterest, target: '_blank', :rel => 'nofollow' do %> <i class="fa fa-pinterest-square fa-2x"></i> &nbsp;  <% end %></div>
 </td>
 <% end %>
 
 <% if @listing.google.present? %> 
 <td>
-		<div class="button"> <%= link_to @listing.google, target: '_blank' do %> <i class="fa fa-google-plus-square fa-2x"></i> &nbsp;  <% end %></div>
+		<div class="button"> <%= link_to @listing.google, target: '_blank', :rel => 'nofollow' do %> <i class="fa fa-google-plus-square fa-2x"></i> &nbsp;  <% end %></div>
 </tr>
 <% end %>
 </table>

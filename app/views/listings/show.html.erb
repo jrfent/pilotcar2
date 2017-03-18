@@ -20,12 +20,12 @@
 	  </div>
 	  <div class="col-md-5 col-md-4">
 		  <h4><small><br></small>
-			  Main: <%= link_to number_to_phone(@listing.contactphone, area_code: true),  phone_number_link(@listing.contactphone) %><br>
+			  Main: <%= link_to number_to_phone(@listing.contactphone, area_code: true),  phone_number_link(@listing.contactphone), :rel => 'nofollow' %><br>
 			  <% if @listing.cellphone.present? %>
-			  Mobile: <%= link_to number_to_phone(@listing.cellphone, area_code: true),  phone_number_link(@listing.cellphone) %><br>
+			  Mobile: <%= link_to number_to_phone(@listing.cellphone, area_code: true),  phone_number_link(@listing.cellphone), :rel => 'nofollow'  %><br>
 			  <% end %>
 			  <% if @listing.fax.present? %>
-			  Fax: <%= link_to number_to_phone(@listing.fax, area_code: true),  "#"%><br>
+			  Fax: <%= link_to number_to_phone(@listing.fax, area_code: true), phone_number_link(@listing.fax) , :rel => 'nofollow' %><br>
 			  <% end %>
 			  <% if @listing.website.present? %>
 			  Website: <%= link_to @listing.title, @listing.website %>
