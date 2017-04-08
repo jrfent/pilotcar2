@@ -1,5 +1,7 @@
 <strong>PilotCar</strong>
 
+Pilot Car Finder is up and running. [pilot cars](http://pilotcarfinder.com)  Gotta love it!
+
 <strong>Things to do:</strong>
 
 create admin panel please - it's overdue!
