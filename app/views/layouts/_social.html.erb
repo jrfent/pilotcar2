@@ -2,7 +2,7 @@
 <tr>
 <% if @listing.blog.present? %>
 <td>
-      	<div class="button"> <%= link_to @listing.blog, target: '_blank' do %> <i class="fa fa-wordpress fa-2x"></i> &nbsp; <% end %></div>
+      	<div class="button"> <%= link_to @listing.blog, target: '_blank', :rel => 'nofollow' do %> <i class="fa fa-wordpress fa-2x"></i> &nbsp; <% end %></div>
 </td>
 <% end %>
 

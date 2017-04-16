@@ -28,7 +28,7 @@
 			  Fax: <%= link_to number_to_phone(@listing.fax, area_code: true), phone_number_link(@listing.fax) , :rel => 'nofollow' %><br>
 			  <% end %>
 			  <% if @listing.website.present? %>
-			  Website: <%= link_to @listing.title, @listing.website %>
+			  Website: <%= link_to @listing.title, @listing.website, :rel => 'nofollow' %>
 			  <% end %>
 		  </h4>
 	  </div>
