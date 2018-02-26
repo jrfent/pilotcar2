@@ -8,7 +8,7 @@
 	  <span class="icon-bar"></span>
 	  <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="../">PilotCarFinder.com</a>
+    <a class="navbar-brand" href="../">directory.hoodcleaningmarketing.com</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,14 +32,12 @@
 	          <% else %>
 	          <% if pilot_signed_in? %>
               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Pilot's Menu &nbsp;
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Hood Cleaner's Menu &nbsp;
                   <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-					  <li><%= link_to 'Create PilotCar Listing', new_listing_path %></li>
+					  <li><%= link_to 'Create New Listing', new_listing_path %></li>
 					  <li><%= link_to 'My Listings', mylistings_path %></li>
-					  <li><%= link_to "Browse New Job Listings(coming soon)", '#' %></li>
-					  <li><%= link_to "Jobs Bid List (coming soon)", "#" %></li>
 			  		  <li><%= link_to "Account Settings", edit_pilot_registration_path %></li>
                   </ul>
               </li>  
@@ -50,7 +48,7 @@
                   <b class="caret"></b>
                   </a>
 			  <ul class="dropdown-menu">
-				  <li><%= link_to "Pilots Sign in", new_pilot_session_path %></li>
+				  <li><%= link_to "Hood Cleaner Sign in", new_pilot_session_path %></li>
 			  </ul>
 			   </li>  
 			  <% end %>
