@@ -603,4 +603,4 @@ Subcategory.where(name: 'Weirton', category_id: westvirginia_category.id).first_
 Subcategory.where(name: 'Wheeling', category_id: westvirginia_category.id).first_or_create(name: 'Wheeling', category_id: westvirginia_category.id)
 
 Subcategory.where(name: 'Casper', category_id: wyoming_category.id).first_or_create(name: 'Casper', category_id: wyoming_category.id)
-Subcategory.where(name: 'Cheyenne', category_id: wyoming_category.id).first_or_create(name: 'Cheyenne', category_id: wyoming_category.id)
+Subcategory.where(name: 'Cheyenne', category_id: wyoming_category.id).first_or_create(name: 'Cheyenne', category_id: wyoming_category.id)User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

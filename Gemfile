@@ -25,8 +25,10 @@ gem 'paperclip', '~> 4.2'
 gem 'masonry-rails', '~> 0.2.0'
 gem "font-awesome-rails"
 gem 'ckeditor_rails'
-gem 'administrate'
+# gem 'administrate'
 gem 'haml-rails'
+gem 'activeadmin'
+# gem 'sprockets', '~>  5.0.6'
 
 group :development, :test do
   gem 'sqlite3'

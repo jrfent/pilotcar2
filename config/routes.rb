@@ -1,15 +1,12 @@
 Pilotcar::Application.routes.draw do
-#  namespace :admin do
-#    DashboardManifest::DASHBOARDS.each do |dashboard_resource|
-#      resources dashboard_resource
-#   end
 
-#    root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
-#  end
+
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   resources :bids
   resources :pins
-  
+
   resources :listings do
     collection do
       get 'search'
@@ -17,34 +14,31 @@ Pilotcar::Application.routes.draw do
     resources :notifications
     resources :pins
   end
-  
+
   resources :notifications
   resources :pins
-  
+
   resources :categories do
     resources :subcategories do
       resources :listings
-  end
+    end
   end
 
-  devise_for :users
-  
   resources :loads do
     resources :bids
-  end 
-  
+  end
+
   devise_for :truckers
   devise_for :pilots #, controllers: { registrations: "pilots/registrations", sessions: "pilots/sessions" }
-  
-  #static page routes
-  #root "loads#index"
+
+  # Static
   root "pages#home"
   get "testhome" => "pages#home2"
   get "contact" => "pages#contact"
   get "about" => "pages#about"
   get "signup" => "pages#signup"
   get "privacystatement" => "pages#privacy"
-  
+
   #custom routes
   get "/loads/:id/clone"	=> "loads#clone"
   get "clone" => "loads#clone"
@@ -52,7 +46,7 @@ Pilotcar::Application.routes.draw do
   match '/adminlistings', to: 'listings#adminlistings', via: :get
   match '/subcategories/find_by_category', to: 'subcategories#find_by_category', via: :post
   get "/states" => "categories#index"
-  
+
   get 'sitemap.xml', :to => 'sitemap#index', :defaults => { :format => 'xml' }
-  
+
 end
