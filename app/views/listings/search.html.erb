@@ -3,11 +3,11 @@
 	<div class="well well-sm">
 		  <div class="row">
 				  <div class="col-xs-12 col-sm-7 col-md-7">
-					  <% if @listings.present? %>	
+					  <% if @listings.present? %>
 					  <%  @listings.each do |listing| %>
 						<h4><%= link_to listing.title, listing_path(listing.slug) %></h4>
-						<b><%= listing.city %>, <%= listing.state %> &nbsp; &nbsp;  
-					    <%= link_to number_to_phone(listing.contactphone, area_code: true), 			  				phone_number_link(listing.contactphone) %> </b>
+						<b><%= listing.city %>, <%= listing.state %> &nbsp; &nbsp;
+					  <%= link_to number_to_phone(listing.contactphone, area_code: true), phone_number_link(listing.contactphone) %> </b>
 						<p><%= raw(listing.shortdescription) %><br>
 					<% end %>
 					<% else %>
@@ -23,4 +23,3 @@
 		</div>
 	</div>
 </div>
-	
