@@ -4,7 +4,7 @@ class SubcategoriesController < ApplicationController
   before_filter :set_subcategory, only: :show
 
   def show
-    @listings = @subcategory.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    @listings = @subcategory.listings.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
   end
 
   def find_by_category
